@@ -15,6 +15,7 @@ public class DBTest {
 		Statement statement = null;
 
 		try {
+			Class.forName("org.mariadb.jdbc.Driver");
 			connection = DriverManager.getConnection(DB_URL, username, password);
 			statement = connection.createStatement();
 			String sql = "select * from test";
@@ -28,7 +29,7 @@ public class DBTest {
 			resultSet.close();
 			statement.close();
 			connection.close();
-		} catch (SQLException e) {
+		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 		} finally {
 			try {

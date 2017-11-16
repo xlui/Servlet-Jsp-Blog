@@ -16,8 +16,13 @@ public class ArticleDaoImplement implements ArticleDao {
 	private Connection connection = null;
 	private static ArticleDao instance;
 
-	private ArticleDaoImplement() throws SQLException {
-		this.connection = DriverManager.getConnection(DB_URL, username, password);
+	private ArticleDaoImplement(){
+		try {
+			Class.forName("org.mariadb.jdbc.Driver");
+			this.connection = DriverManager.getConnection(DB_URL, username, password);
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -26,11 +31,7 @@ public class ArticleDaoImplement implements ArticleDao {
 	 */
 	public static ArticleDao getInstance() {
 		if (instance == null) {
-			try {
-				instance = new ArticleDaoImplement();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+			instance = new ArticleDaoImplement();
 		}
 		return instance;
 	}
@@ -60,6 +61,34 @@ public class ArticleDaoImplement implements ArticleDao {
 		}
 		DBUtils.close(resultSet);
 		return article;
+	}
+
+	/**
+	 * 通过列名与值获得数据的实现
+	 * @param column 列名
+	 * @param value 值
+	 * @return 文章对象列表
+	 */
+	@Override
+	public List<Article> getArticleByColumn(String column, String value) {
+		List<Article> articleList = null;
+		String sql = "select * from article where " + column + "=?";
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, value);
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			articleList = new ArrayList<>();
+			Article article = null;
+			while (resultSet.next()) {
+				article = getNewArticle(resultSet);
+				articleList.add(article);
+			}
+			DBUtils.close(preparedStatement, resultSet);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return articleList;
 	}
 
 	/**

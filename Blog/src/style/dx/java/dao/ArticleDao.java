@@ -8,9 +8,17 @@ public interface ArticleDao {
 	// 查询文章或者分类时参数对应的字段名
 	public static final String SEARCH_ARTICLE = "article";
 	public static final String SEARCH_SORT = "sort";
+
+	/**
+	 * 通过列与值获得文章
+	 * @param column 列名
+	 * @param value 值
+	 * @return 文章列表
+	 */
+	List<Article> getArticleByColumn(String column, String value);
+
 	/**
 	 * 获取所有文章
-	 *
 	 * @return `List` of articles
 	 */
 	List getAllArticle();
