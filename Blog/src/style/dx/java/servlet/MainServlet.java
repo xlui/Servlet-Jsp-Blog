@@ -20,6 +20,6 @@ public class MainServlet extends HttpServlet {
 		request.setAttribute("article_list", articleService.getArticle());
 		log("Articles:\n");
 		log(String.valueOf(articleService.getArticle()));
-		request.getRequestDispatcher("/main.jsp").include(request, response);
+		request.getRequestDispatcher("/page/main.jsp").include(request, response);
 	}
 }

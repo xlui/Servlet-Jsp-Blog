@@ -26,7 +26,7 @@ public class ArticleServlet extends HttpServlet {
 		request.setAttribute("article_tags", null);
 		// todo: ArticleService.getTagById
 		request.setAttribute("article_previous", articleService.getPreviousArticle(article.getTime()));
-		request.setAttribute("article_previous", articleService.getNextArticle(article.getTime()));
+		request.setAttribute("article_next", articleService.getNextArticle(article.getTime()));
 
 		request.getRequestDispatcher("/page/article.jsp").forward(request, response);
 	}
