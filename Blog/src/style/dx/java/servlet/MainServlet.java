@@ -20,6 +20,7 @@ public class MainServlet extends HttpServlet {
 		ArticleService articleService = ArticleService.getInstance();
 		request.setAttribute("article_list", articleService.getArticle());
 		request.setAttribute("article_number", articleService.getCount(ArticleDao.SEARCH_ARTICLE));
+		request.setAttribute("sort_number", articleService.getCount(ArticleDao.SEARCH_SORT));
 		log("Articles:\n");
 		log(String.valueOf(articleService.getArticle()));
 		request.getRequestDispatcher("/page/main.jsp").include(request, response);

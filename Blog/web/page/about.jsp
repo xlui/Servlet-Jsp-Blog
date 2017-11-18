@@ -18,7 +18,11 @@
         <div id="header"></div>
         <div class="row c_center">
             <div class="col-md-3" id="left_content">
-                <jsp:include page="side.jsp"/>
+                <c:set var="about" value="true"/>
+                <jsp:include page="side.jsp">
+                    <jsp:param name="about" value="${about}"/>
+                    <jsp:param name="root" value="${root}"/>
+                </jsp:include>
             </div>
 
             <div style="margin-top: 120px;">

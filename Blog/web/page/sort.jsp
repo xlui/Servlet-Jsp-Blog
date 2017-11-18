@@ -25,7 +25,10 @@
 
         <div class="row c_center">
             <div class="col-md-3" id="left_content">
-                <jsp:include page="side.jsp"/>
+                <jsp:include page="side.jsp">
+                    <jsp:param name="sort" value="true"/>
+                    <jsp:param name="root" value="${root}"/>
+                </jsp:include>
             </div>
 
             <div class="col-md-2" id="center_content"></div>

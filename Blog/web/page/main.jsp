@@ -27,7 +27,10 @@
 
         <%-- 左侧栏 --%>
         <div class="col-md-3" id="left_content">
-          <jsp:include page="side.jsp"/>
+          <jsp:include page="side.jsp">
+            <jsp:param name="home" value="true"/>
+            <jsp:param name="root" value="${root}"/>
+          </jsp:include>
         </div>
 
         <%-- 中间栏 --%>
