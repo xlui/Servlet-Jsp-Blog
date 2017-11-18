@@ -19,8 +19,7 @@ public class SortServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String get = StringUtils.decode(request.getParameter("get"));
 		ArticleService articleService = ArticleService.getInstance();
-		request.setAttribute("sort_article_map", null);
-		// todo: method support
+		request.setAttribute("sort_article_map", articleService.getSort(get));
 		request.getRequestDispatcher("/page/sort.jsp").forward(request, response);
 	}
 }

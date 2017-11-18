@@ -21,7 +21,7 @@ public interface ArticleDao {
 	 * 获取所有文章
 	 * @return `List` of articles
 	 */
-	List getAllArticle();
+	List<Article> getAllArticle();
 
 	/**
 	 * 获取最新的文章

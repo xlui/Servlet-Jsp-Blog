@@ -12,13 +12,13 @@
 
 <div class="c_center">
     <div class="inline">
-        <a href="#">${article_number}<br/>博客</a>
+        <a href="#"><span>${article_number}</span><br/>博客</a>
     </div>
     <div class="inline">
         <a href="${root}/sort?get=all"><span>${sort_number}</span><br/>分类</a>
     </div>
     <div class="inline">
-        <a href="${root}/tags?get=all"><span>${tags_number}</span><br>标签</a>
+        <a href="${root}/tags?get=all"><span>${tags_number}</span><br/>标签</a>
     </div>
 </div>
 

@@ -2,6 +2,7 @@ package style.dx.java.daoImpl;
 
 import style.dx.java.dao.ArticleDao;
 import style.dx.java.model.Article;
+import style.dx.java.utils.ArticleUtils;
 import style.dx.java.utils.DBUtils;
 
 import java.sql.*;
@@ -88,7 +89,7 @@ public class ArticleDaoImplement implements ArticleDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return articleList;
+		return ArticleUtils.cutTime(articleList);
 	}
 
 	/**
@@ -96,7 +97,7 @@ public class ArticleDaoImplement implements ArticleDao {
 	 * @return 有序的文章对象列表
 	 */
 	@Override
-	public List getAllArticle() {
+	public List<Article> getAllArticle() {
 		List<Article> articleList = new ArrayList<>();
 		String sql = "select * from article";
 		try {
