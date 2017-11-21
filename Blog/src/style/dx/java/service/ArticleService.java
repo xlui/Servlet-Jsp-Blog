@@ -52,20 +52,20 @@ public class ArticleService {
 
 	/**
 	 * 获取上一篇文章
-	 * @param time 当前文章的时间
+	 * @param id 当前文章的 id
 	 * @return 上一篇文章对象
 	 */
-	public Article getPreviousArticle(String time) {
-		return articleDao.getLastArticle(time);
+	public Article getPreviousArticle(Integer id) {
+		return articleDao.getLastArticle(id);
 	}
 
 	/**
 	 * 获取下一篇文章
-	 * @param time 当前文章的时间
+	 * @param id 当前文章的 id
 	 * @return 下一篇文章对象
 	 */
-	public Article getNextArticle(String time) {
-		return articleDao.getNextArticle(time);
+	public Article getNextArticle(Integer id) {
+		return articleDao.getNextArticle(id);
 	}
 
 	/**

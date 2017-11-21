@@ -54,13 +54,19 @@ public class ArticleDaoImplement implements ArticleDao {
 	 * @param sql 查询语句
 	 * @return 文章对象
 	 */
-	private Article getOneArticleBySQL(String sql) throws SQLException {
+	private Article getOneArticleBySQL(String sql) {
 		Article article = null;
-		ResultSet resultSet = DBUtils.executeQuery(connection, sql);
-		if (resultSet.next()) {
-			article = getNewArticle(resultSet);
+		ResultSet resultSet;
+		try {
+			resultSet = DBUtils.executeQuery(connection, sql);
+			if (resultSet.next()) {
+				article = getNewArticle(resultSet);
+			}
+			DBUtils.close(resultSet);
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
-		DBUtils.close(resultSet);
+
 		return article;
 	}
 
@@ -121,44 +127,29 @@ public class ArticleDaoImplement implements ArticleDao {
 	@Override
 	public Article getLatestArticle() {
 		String sql = "select * from article order by time desc limit 1";
-		try {
-			return getOneArticleBySQL(sql);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return null;
+		return getOneArticleBySQL(sql);
 	}
 
 	/**
 	 * 返回当前文章的下一篇文章
-	 * @param time 当前文章的时间
+	 * @param id 当前文章的 id
 	 * @return 文章对象或者 null
 	 */
 	@Override
-	public Article getLastArticle(String time) {
-		String sql = "select * from article where time < '" + time + "'order by time desc";
-		try {
-			return getOneArticleBySQL(sql);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return null;
+	public Article getLastArticle(Integer id) {
+		String sql = "select * from article where id < '" + id + "'order by time limit 1";
+		return getOneArticleBySQL(sql);
 	}
 
 	/**
 	 * 返回当前文章的上一篇文章
-	 * @param time 当前文章的时间
+	 * @param id 当前文章的 id
 	 * @return 文章对象或者 null
 	 */
 	@Override
-	public Article getNextArticle(String time) {
-		String sql = "select * from article where time > '" + time + "'order by time";
-		try {
-			return getOneArticleBySQL(sql);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return null;
+	public Article getNextArticle(Integer id) {
+		String sql = "select * from article where id > '" + id + "'order by time limit 1";
+		return getOneArticleBySQL(sql);
 	}
 
 	/**
@@ -194,7 +185,7 @@ public class ArticleDaoImplement implements ArticleDao {
 		int result = 0;
 		String sql = "delete from article where id=?";
 		try {
-			PreparedStatement preparedStatement = connection.prepareStatement("sql");
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setInt(1, id);
 			result = preparedStatement.executeUpdate();
 			DBUtils.close(preparedStatement);

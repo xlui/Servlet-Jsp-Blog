@@ -28,27 +28,19 @@ public class Article implements Comparable {
 	}
 
 	/**
-	 * 比较两篇文章发布时间的大小
+	 * 比较两篇文章发布ID的大小
 	 * @param o 比较的文章对象
-	 * @return true or false
+	 * @return 1 0 -1
 	 */
 	@Override
 	public int compareTo(Object o) {
 		if (o instanceof Article) {
 			Article thatArticle = (Article) o;
-			Date thisDate = null, thatDate = null;
-			try {
-				thisDate = DateUtils.getDate(this.time);
-				thatDate = DateUtils.getDate(thatArticle.time);
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}
 
-			if (thisDate != null) {
-				if (thatDate != null) {
-					return thisDate.compareTo(thatDate);
-				}
-			}
+			Integer thisId = this.id;
+			Integer thatId = thatArticle.getId();
+
+			return thisId.compareTo(thatId);
 		}
 		return 0;
 	}

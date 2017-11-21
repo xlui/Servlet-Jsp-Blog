@@ -31,17 +31,17 @@ public interface ArticleDao {
 
 	/**
 	 * 获取上一篇文章，基于时间判断
-	 * @param time 当前文章的时间
+	 * @param id 当前文章的 id
 	 * @return 上一篇文章对象
 	 */
-	Article getLastArticle(String time);
+	Article getLastArticle(Integer id);
 
 	/**
-	 * 获取下一篇文章，基于时间判断
-	 * @param time 当前文章的时间
+	 * 获取下一篇文章，基于文章 id 判断
+	 * @param id 当前文章的 id
 	 * @return 下一篇文章对象
 	 */
-	Article getNextArticle(String time);
+	Article getNextArticle(Integer id);
 
 	/**
 	 * 添加新文章
