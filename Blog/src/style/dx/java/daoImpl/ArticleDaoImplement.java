@@ -11,19 +11,11 @@ import java.util.Collections;
 import java.util.List;
 
 public class ArticleDaoImplement implements ArticleDao {
-	private static final String DB_URL = "jdbc:mysql://localhost:3306/java_blog";
-	private static final String username = "admin";
-	private static final String password = "admin";
 	private Connection connection = null;
 	private static ArticleDao instance;
 
 	private ArticleDaoImplement(){
-		try {
-			Class.forName("org.mariadb.jdbc.Driver");
-			this.connection = DriverManager.getConnection(DB_URL, username, password);
-		} catch (ClassNotFoundException | SQLException e) {
-			e.printStackTrace();
-		}
+		connection = DBUtils.getConnection();
 	}
 
 	/**

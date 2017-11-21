@@ -3,6 +3,22 @@ package style.dx.java.utils;
 import java.sql.*;
 
 public class DBUtils {
+	private static final String DB_URL = "jdbc:mysql://localhost:3306/java_blog";
+	private static final String username = "admin";
+	private static final String password = "admin";
+	private static Connection connection = null;
+
+	public static Connection getConnection() {
+		if (connection == null) {
+			try {
+				Class.forName("org.mariadb.jdbc.Driver");
+				connection = DriverManager.getConnection(DB_URL, username, password);
+			} catch (ClassNotFoundException | SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return connection;
+	}
 
 	/**
 	 * 执行某个 SQL 语句并返回 ResultSet 对象

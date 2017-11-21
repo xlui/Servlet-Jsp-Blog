@@ -2,6 +2,7 @@ package style.dx.java.servlet;
 
 import style.dx.java.model.Article;
 import style.dx.java.service.ArticleService;
+import style.dx.java.service.TagService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,12 +20,12 @@ public class ArticleServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id = request.getParameter("id");
 		ArticleService articleService = ArticleService.getInstance();
+		TagService tagService = TagService.getInstance();
 		Article article = articleService.getArticle("id", id).get(0);
 		request.setAttribute("article", article);
 
 
-		request.setAttribute("article_tags", null);
-		// todo: ArticleService.getTagById
+		request.setAttribute("article_tags", tagService.getTagById(String.valueOf(article.getId())));
 		request.setAttribute("article_previous", articleService.getPreviousArticle(article.getId()));
 		request.setAttribute("article_next", articleService.getNextArticle(article.getId()));
 

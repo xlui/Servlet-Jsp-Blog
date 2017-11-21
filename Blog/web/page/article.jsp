@@ -27,17 +27,18 @@
                 <br>
                 <div>
                     <h5>
-                        <span>${article.time}</span>
-                        <a href="${root}/sort?get=${article.sort}">${article.sort}</a>
-                        ${article.author}
+                        发表时间：<span>${article.time}</span>
+                        | 分类：<a href="${root}/sort?get=${article.sort}">${article.sort}</a>
+                        | 作者：${article.author}
                     </h5>
                 </div>
                 <div class="r_div">
                     <%-- todo: features--%>
                 </div>
                 <div id="tag">
+                    标签：
                     <c:forEach var="t" items="${article_tags}">
-                        <a href="${root}/tags?get=${t.tag}">${t.tag}&nbsp;</a>
+                        <a href="${root}/tag?get=${t.tag}">${t.tag}&nbsp;</a>
                     </c:forEach>
                 </div>
             </div>

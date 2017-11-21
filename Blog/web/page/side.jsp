@@ -12,16 +12,19 @@
 </div>
 
 <div class="c_center">
-    <div class="inline">
-        <a href="#"><span>${article_number}</span><br/>博客</a>
-    </div>
-    <div class="inline">
-        <a href="${param.root}/sort?get=all"><span>${sort_number}</span><br/>分类</a>
-    </div>
-    <div class="inline">
-        <a href="${param.root}/tags?get=all"><span>${tags_number}</span><br/>标签</a>
-    </div>
+    <br>
 </div>
+<%--<div class="c_center">--%>
+    <%--<div class="inline ">--%>
+        <%--<a href="${param.root}/"><span>${article_number}</span><br/>博客</a>--%>
+    <%--</div>--%>
+    <%--<div class="inline ">--%>
+        <%--<a href="${param.root}/sort?get=all"><span>${sort_number}</span><br/>分类</a>--%>
+    <%--</div>--%>
+    <%--<div class="inline ">--%>
+        <%--<a href="${param.root}/tag?get=all"><span>${tag_number}</span><br/>标签</a>--%>
+    <%--</div>--%>
+<%--</div>--%>
 
 <div id="list">
     <table class="table table-hover c_center">
@@ -57,7 +60,7 @@
                 <tr>
             </c:otherwise>
         </c:choose>
-            <td><a href="${param.root}/tags?get=all"><span class="glyphicon glyphicon-tags"></span>
+            <td><a href="${param.root}/tag?get=all"><span class="glyphicon glyphicon-tags"></span>
                 &nbsp;&nbsp;标签
             </a></td>
         </tr>
