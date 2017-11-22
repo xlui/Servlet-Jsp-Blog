@@ -1,6 +1,7 @@
 package style.dx.java.servlet;
 
 import style.dx.java.service.TagService;
+import style.dx.java.utils.SideUtils;
 import style.dx.java.utils.StringUtils;
 
 import javax.servlet.ServletException;
@@ -21,6 +22,7 @@ public class TagServlet extends HttpServlet {
 		TagService tagService = TagService.getInstance();
 		System.out.println(tagService.getAllTags());
 		request.setAttribute("id_tag_map", tagService.getTagMappedArticles(param));
+		SideUtils.setAttribute(request);
 
 		request.getRequestDispatcher("/page/tag.jsp").forward(request, response);
 	}

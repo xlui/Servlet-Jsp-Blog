@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <div id="title">
     <h2><a href="${param.root}/">My Blog</a></h2>
-    <h5 class="text-muted">Hello Stranger!</h5>
+    <h5 class="text-muted">Hello ${user.username}!</h5>
 </div>
 
 <div class="c_center" id="person_info">
