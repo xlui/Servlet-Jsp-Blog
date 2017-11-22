@@ -1,3 +1,4 @@
+USE java_blog;
 CREATE TABLE tag (
   id INT DEFAULT NULL,
   tag VARCHAR(30) DEFAULT NULL,

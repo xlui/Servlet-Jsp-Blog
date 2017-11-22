@@ -25,8 +25,8 @@
                 </jsp:include>
             </div>
 
-            <div style="margin-top: 120px;">
-                <h2>About me</h2>
+            <div style="margin-top: 60px;">
+                <h2>关于</h2>
                 My Blog by <a href="https://github.com/xlui">xlui</a> 2017 11
                 <br>
                 <div style="text-align: center">

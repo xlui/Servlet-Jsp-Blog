@@ -36,7 +36,7 @@
             <div class="col-md-7" id="right_content">
                 <br><br>
                 <div class="list-group">
-                    <a href="#" class="list-group-item">分类</a>
+                    <a href="#" class="list-group-item active">分类</a>
                     <c:forEach var="map" items="${sort_article_map}">
                         <div class="sort_name">
                             <span class="glyphicon glyphicon-triangle-bottom"></span>

@@ -1,5 +1,11 @@
 # Develop History
 
+# 0.0.5
+
+Improvements
+
+- add `tag` to a article in database
+
 # 0.0.4
 
 Improvements

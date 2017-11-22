@@ -15,7 +15,7 @@
 
 首页预览：
 
-![首页](Images/v0.0.3.png)
+![首页](Images/index.png)
 
 文章页：
 
@@ -24,6 +24,10 @@
 分类页：
 
 ![分类](Images/sort.png)
+
+标签页：
+
+![标签](Images/tag.png)
 
 关于：
 
