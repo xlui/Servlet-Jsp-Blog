@@ -53,4 +53,11 @@ public class DBUtils {
 		if (resultSet != null)
 			resultSet.close();
 	}
+
+	public static void close(ResultSet resultSet, Statement statement) throws SQLException {
+		if (statement != null)
+			statement.close();
+		if (resultSet != null)
+			resultSet.close();
+	}
 }

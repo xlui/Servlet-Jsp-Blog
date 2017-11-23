@@ -34,7 +34,7 @@
         <input type="password" name="password" id="inputPassword" class="form-control" placeholder="密码" required/>
         <button class="btn btn-lg btn-primary btn-block" type="submit" id="submit">登录</button>
 
-        <a href="${root}/index.jsp">访客登录</a>
+        <a href="${root}/index.jsp">默认用户名：1 默认密码：dev</a>
     </form>
 </div>
 

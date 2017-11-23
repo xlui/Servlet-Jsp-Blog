@@ -38,7 +38,7 @@ public class ArticleDaoImplement implements ArticleDao {
 	private Article getNewArticle(ResultSet resultSet) throws SQLException {
 		return new Article(resultSet.getInt("id"), resultSet.getString("title"),
 				resultSet.getString("author"), resultSet.getString("sort"), resultSet.getString("time"),
-				resultSet.getString("content"));
+				resultSet.getString("content"), resultSet.getInt("comment"));
 	}
 
 	/**

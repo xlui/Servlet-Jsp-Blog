@@ -1,10 +1,5 @@
 package style.dx.java.model;
 
-import style.dx.java.utils.DateUtils;
-
-import java.text.ParseException;
-import java.util.Date;
-
 public class Article implements Comparable {
 	private int id;
 	private String title;
@@ -12,12 +7,13 @@ public class Article implements Comparable {
 	private String sort;
 	private String time;
 	private String content;
+	private int comment;
 
 	public Article() {
 		super();
 	}
 
-	public Article(int id, String title, String author, String sort, String time, String content) {
+	public Article(int id, String title, String author, String sort, String time, String content, int comment) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -25,6 +21,7 @@ public class Article implements Comparable {
 		this.sort = sort;
 		this.time = time;
 		this.content = content;
+		this.comment = comment;
 	}
 
 	/**
@@ -96,5 +93,13 @@ public class Article implements Comparable {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public int getComment() {
+		return comment;
+	}
+
+	public void setComment(int comment) {
+		this.comment = comment;
 	}
 }
