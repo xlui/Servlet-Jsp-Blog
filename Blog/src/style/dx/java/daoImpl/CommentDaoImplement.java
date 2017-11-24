@@ -37,8 +37,9 @@ public class CommentDaoImplement implements CommentDao {
 			preparedStatement.setString(3, comment.getContent());
 			preparedStatement.setString(4, comment.getTime());
 			result = preparedStatement.executeUpdate();
-			sql = "update article set comment=comment+1 where id=" + comment.getArticleId();
+			sql = "update article set comment=comment+1 where id=?";
 			PreparedStatement preparedStatement1 = connection.prepareStatement(sql);
+			preparedStatement1.setInt(1, comment.getArticleId());
 			preparedStatement1.execute();
 
 			DBUtils.close(preparedStatement);

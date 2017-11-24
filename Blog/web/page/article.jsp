@@ -10,7 +10,7 @@
     <c:set var="root" value="${pageContext.request.contextPath}"/>
     <link rel="stylesheet" type="text/css" href="${root}/css/article.css">
     <link rel="stylesheet" href="${root}/css/comment.css">
-    <link rel="stylesheet" href="${root}/css/public.css">
+    <%--<link rel="stylesheet" href="${root}/css/public.css">--%>
     <script type="text/javascript" src="${root}/js/article.js"></script>
 </head>
 <body>
@@ -28,12 +28,12 @@
                 <h3>${article.title}</h3>
                 <br>
                 <div>
-                    <h5>
+                    <%--<h5>--%>
                         发表时间：<span>${article.time}</span>
                         | 分类：<a href="${root}/sort?get=${article.sort}">${article.sort}</a>
                         | 作者：${article.author}
                         | <span class="glyphicon glyphicon-comment">&nbsp;${article.comment}&nbsp;</span>
-                    </h5>
+                    <%--</h5>--%>
                 </div>
                 <div id="tag">
                     标签：

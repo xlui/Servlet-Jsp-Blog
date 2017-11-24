@@ -25,13 +25,13 @@ public class LoginServlet extends HttpServlet {
 		if (user != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("user", user);
-			request.setAttribute("article_list", articleService.getArticle());
+//			request.setAttribute("article_list", articleService.getArticle());
 			SideUtils.setAttribute(request);
-			request.getRequestDispatcher("/page/main.jsp").forward(request, response);
+			request.getRequestDispatcher("/index").forward(request, response);
 		} else {
 			log("[LOG] login failed!");
 			request.setAttribute("login", "Invalid username or password!");
-			request.getRequestDispatcher("/page/login.jsp").forward(request, response);
+			request.getRequestDispatcher("/login").include(request, response);
 		}
 	}
 
