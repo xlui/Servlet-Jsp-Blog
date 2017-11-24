@@ -37,7 +37,7 @@
                 <tr>
             </c:otherwise>
         </c:choose>
-            <td><a href="${param.root}/index.jsp"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;首页</a></td>
+            <td><a href="${param.root}/index"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;首页</a></td>
         </tr>
 
         <c:choose>
@@ -87,7 +87,7 @@
                 <tr>
             </c:otherwise>
         </c:choose>
-            <td><a href="${param.root}/page/about.jsp"><span class="glyphicon glyphicon-user"></span>
+            <td><a href="${param.root}/about"><span class="glyphicon glyphicon-user"></span>
                 &nbsp;&nbsp;关于
             </a></td>
         </tr>
