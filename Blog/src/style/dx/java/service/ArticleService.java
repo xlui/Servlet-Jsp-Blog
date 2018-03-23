@@ -3,8 +3,8 @@ package style.dx.java.service;
 import style.dx.java.dao.ArticleDao;
 import style.dx.java.daoImpl.ArticleDaoImplement;
 import style.dx.java.model.Article;
-import style.dx.java.utils.ArticleUtils;
-import style.dx.java.utils.StringUtils;
+import style.dx.java.util.ArticleUtils;
+import style.dx.java.util.StringUtils;
 
 import java.util.HashMap;
 import java.util.List;

@@ -2,7 +2,7 @@ package style.dx.java.daoImpl;
 
 import style.dx.java.dao.UserDao;
 import style.dx.java.model.User;
-import style.dx.java.utils.DBUtils;
+import style.dx.java.util.DBUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,7 +14,7 @@ public class UserDaoImplement implements UserDao {
 	private static UserDaoImplement instance;
 
 	private UserDaoImplement() {
-		connection = DBUtils.getConnection();
+		connection = DBUtils.getInstance();
 	}
 
 	public static UserDaoImplement getInstance() {

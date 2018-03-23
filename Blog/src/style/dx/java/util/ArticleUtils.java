@@ -1,4 +1,4 @@
-package style.dx.java.utils;
+package style.dx.java.util;
 
 import style.dx.java.model.Article;
 

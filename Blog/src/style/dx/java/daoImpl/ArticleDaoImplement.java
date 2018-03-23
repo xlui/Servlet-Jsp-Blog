@@ -2,8 +2,8 @@ package style.dx.java.daoImpl;
 
 import style.dx.java.dao.ArticleDao;
 import style.dx.java.model.Article;
-import style.dx.java.utils.ArticleUtils;
-import style.dx.java.utils.DBUtils;
+import style.dx.java.util.ArticleUtils;
+import style.dx.java.util.DBUtils;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ public class ArticleDaoImplement implements ArticleDao {
 	private static ArticleDao instance;
 
 	private ArticleDaoImplement(){
-		connection = DBUtils.getConnection();
+		connection = DBUtils.getInstance();
 	}
 
 	/**

@@ -1,8 +1,8 @@
 package style.dx.java.servlet;
 
 import style.dx.java.service.ArticleService;
-import style.dx.java.utils.SideUtils;
-import style.dx.java.utils.StringUtils;
+import style.dx.java.util.SideUtils;
+import style.dx.java.util.StringUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

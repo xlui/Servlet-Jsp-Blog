@@ -2,7 +2,7 @@ package style.dx.java.daoImpl;
 
 import style.dx.java.dao.CommentDao;
 import style.dx.java.model.Comment;
-import style.dx.java.utils.DBUtils;
+import style.dx.java.util.DBUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,7 +16,7 @@ public class CommentDaoImplement implements CommentDao {
 	private static CommentDao instance;
 
 	private CommentDaoImplement() {
-		connection = DBUtils.getConnection();
+		connection = DBUtils.getInstance();
 	}
 
 	public static CommentDao getInstance() {

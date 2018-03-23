@@ -2,7 +2,7 @@ package style.dx.java.daoImpl;
 
 import style.dx.java.dao.TagDao;
 import style.dx.java.model.Tag;
-import style.dx.java.utils.DBUtils;
+import style.dx.java.util.DBUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,7 +16,7 @@ public class TagDaoImplement implements TagDao {
 	private static TagDaoImplement instance;
 
 	private TagDaoImplement() {
-		connection = DBUtils.getConnection();
+		connection = DBUtils.getInstance();
 	}
 
 	public static TagDaoImplement getInstance() {

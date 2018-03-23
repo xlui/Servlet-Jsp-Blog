@@ -3,7 +3,7 @@ package style.dx.java.servlet;
 import style.dx.java.model.User;
 import style.dx.java.service.ArticleService;
 import style.dx.java.service.UserService;
-import style.dx.java.utils.SideUtils;
+import style.dx.java.util.SideUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

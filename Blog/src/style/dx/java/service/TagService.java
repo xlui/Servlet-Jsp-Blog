@@ -4,8 +4,8 @@ import style.dx.java.dao.TagDao;
 import style.dx.java.daoImpl.TagDaoImplement;
 import style.dx.java.model.Article;
 import style.dx.java.model.Tag;
-import style.dx.java.utils.ArticleUtils;
-import style.dx.java.utils.StringUtils;
+import style.dx.java.util.ArticleUtils;
+import style.dx.java.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;

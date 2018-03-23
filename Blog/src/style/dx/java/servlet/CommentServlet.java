@@ -2,7 +2,7 @@ package style.dx.java.servlet;
 
 import style.dx.java.model.Comment;
 import style.dx.java.service.CommentService;
-import style.dx.java.utils.DateUtils;
+import style.dx.java.util.DateUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.Date;
 
 @WebServlet(value = "/comment")
-public class NewCommentServlet extends HttpServlet {
+public class CommentServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String info;
 		String cookieName = "comment_cookie" + request.getParameter("id");

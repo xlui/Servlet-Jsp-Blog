@@ -1,9 +1,7 @@
 package style.dx.java.servlet;
 
-import style.dx.java.dao.ArticleDao;
 import style.dx.java.service.ArticleService;
-import style.dx.java.service.TagService;
-import style.dx.java.utils.SideUtils;
+import style.dx.java.util.SideUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
