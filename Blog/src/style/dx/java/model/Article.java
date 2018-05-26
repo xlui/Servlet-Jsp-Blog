@@ -1,19 +1,20 @@
 package style.dx.java.model;
 
-public class Article implements Comparable {
-	private int id;
+import java.io.Serializable;
+
+public class Article implements Serializable {
+	private Integer id;
 	private String title;
 	private String author;
 	private String sort;
 	private String time;
 	private String content;
-	private int comment;
 
 	public Article() {
 		super();
 	}
 
-	public Article(int id, String title, String author, String sort, String time, String content, int comment) {
+	public Article(Integer id, String title, String author, String sort, String time, String content) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -21,25 +22,6 @@ public class Article implements Comparable {
 		this.sort = sort;
 		this.time = time;
 		this.content = content;
-		this.comment = comment;
-	}
-
-	/**
-	 * 比较两篇文章发布ID的大小
-	 * @param o 比较的文章对象
-	 * @return 1 0 -1
-	 */
-	@Override
-	public int compareTo(Object o) {
-		if (o instanceof Article) {
-			Article thatArticle = (Article) o;
-
-			Integer thisId = this.id;
-			Integer thatId = thatArticle.getId();
-
-			return thisId.compareTo(thatId);
-		}
-		return 0;
 	}
 
 	@Override
@@ -47,11 +29,11 @@ public class Article implements Comparable {
 		return "Article [id=" + id + ", title=" + title + ", author=" + author + ", sort=" + sort + ", time=" + time + ", content=" + content + "]";
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -93,13 +75,5 @@ public class Article implements Comparable {
 
 	public void setContent(String content) {
 		this.content = content;
-	}
-
-	public int getComment() {
-		return comment;
-	}
-
-	public void setComment(int comment) {
-		this.comment = comment;
 	}
 }

@@ -1,7 +1,7 @@
 package style.dx.java.service;
 
 import style.dx.java.dao.ArticleDao;
-import style.dx.java.daoImpl.ArticleDaoImplement;
+import style.dx.java.dao.daoImpl.ArticleDaoImpl;
 import style.dx.java.model.Article;
 import style.dx.java.util.ArticleUtils;
 import style.dx.java.util.StringUtils;
@@ -12,21 +12,17 @@ import java.util.Map;
 
 public class ArticleService {
 	private ArticleDao articleDao;
-	private static ArticleService instance;
 
 	private ArticleService() {
-		articleDao = ArticleDaoImplement.getInstance();
+		articleDao = ArticleDaoImpl.getInstance();
 	}
 
-	/**
-	 * 获取单例
-	 * @return 唯一 Service 实例
-	 */
 	public static ArticleService getInstance() {
-		if (instance == null) {
-			instance = new ArticleService();
-		}
-		return instance;
+		return Inner.articleService;
+	}
+
+	private static final class Inner {
+		private static ArticleService articleService = new ArticleService();
 	}
 
 	/**
@@ -34,7 +30,7 @@ public class ArticleService {
 	 * @return 文章列表
 	 */
 	public List getArticle() {
-		List<Article> articles = articleDao.getAllArticle();
+		List<Article> articles = articleDao.getArticles();
 		ArticleUtils.cutTime(articles);
 		ArticleUtils.cutContent(articles);
 		return articles;
@@ -74,7 +70,7 @@ public class ArticleService {
 	 * @return 数量
 	 */
 	public int getCount(String searchKey) {
-		return articleDao.getCount(searchKey);
+		return articleDao.count(searchKey);
 	}
 
 	/**
@@ -87,7 +83,7 @@ public class ArticleService {
 		List<Article> articles = null;
 
 		if (sortName.equals("all") || StringUtils.isEmpty(sortName)) {
-			List sorts = articleDao.getAllSort();
+			List sorts = articleDao.getSorts();
 			for (Object sort : sorts) {
 				articles = articleDao.getArticleByColumn("sort", (String)sort);
 				ArticleUtils.cutContent(articles);

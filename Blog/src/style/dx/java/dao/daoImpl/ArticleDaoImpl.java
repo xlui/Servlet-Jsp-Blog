@@ -1,4 +1,4 @@
-package style.dx.java.daoImpl;
+package style.dx.java.dao.daoImpl;
 
 import style.dx.java.dao.ArticleDao;
 import style.dx.java.model.Article;
@@ -10,23 +10,19 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class ArticleDaoImplement implements ArticleDao {
+public class ArticleDaoImpl implements ArticleDao {
 	private Connection connection = null;
-	private static ArticleDao instance;
 
-	private ArticleDaoImplement(){
+	private ArticleDaoImpl(){
 		connection = DBUtils.getInstance();
 	}
 
-	/**
-	 * 单例模式，始终只有一个数据库连接实例
-	 * @return 操作数据库的实例
-	 */
 	public static ArticleDao getInstance() {
-		if (instance == null) {
-			instance = new ArticleDaoImplement();
-		}
-		return instance;
+		return Inner.articleDao;
+	}
+
+	private static final class Inner {
+		private static final ArticleDao articleDao = new ArticleDaoImpl();
 	}
 
 	/**
@@ -95,7 +91,7 @@ public class ArticleDaoImplement implements ArticleDao {
 	 * @return 有序的文章对象列表
 	 */
 	@Override
-	public List<Article> getAllArticle() {
+	public List<Article> getArticles() {
 		List<Article> articleList = new ArrayList<>();
 		String sql = "select * from article";
 		try {
@@ -193,7 +189,7 @@ public class ArticleDaoImplement implements ArticleDao {
 	 * @return 总数
 	 */
 	@Override
-	public int getCount(String search_key) {
+	public int count(String search_key) {
 		int result = 0;
 		String sql = null;
 		if (search_key.equals(SEARCH_ARTICLE)) {
@@ -218,7 +214,7 @@ public class ArticleDaoImplement implements ArticleDao {
 	 * @return 有序的分类列表
 	 */
 	@Override
-	public List getAllSort() {
+	public List getSorts() {
 		String sql = "select distinct(sort) from article order by sort";
 		List list = new ArrayList();
 		try {

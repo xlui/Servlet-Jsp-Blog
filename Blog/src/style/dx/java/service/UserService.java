@@ -1,9 +1,7 @@
 package style.dx.java.service;
 
-import style.dx.java.dao.TagDao;
 import style.dx.java.dao.UserDao;
-import style.dx.java.daoImpl.TagDaoImplement;
-import style.dx.java.daoImpl.UserDaoImplement;
+import style.dx.java.dao.daoImpl.UserDaoImplement;
 import style.dx.java.model.User;
 
 public class UserService {

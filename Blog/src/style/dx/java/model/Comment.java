@@ -1,11 +1,13 @@
 package style.dx.java.model;
 
-public class Comment {
-	private int id;
-	private int articleId;
-	private String nickName;
+import java.io.Serializable;
+
+public class Comment implements Serializable {
+	private Integer id;
 	private String content;
 	private String time;
+	private Integer user
+	private int articleId;
 
 	@Override
 	public String toString() {

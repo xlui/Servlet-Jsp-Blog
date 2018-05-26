@@ -11,7 +11,7 @@ public class DBUtils {
 		try {
 			Class.forName("org.mariadb.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+			throw new RuntimeException("Cannot find JDBC driver!");
 		}
 		return Inner.connection;
 	}

@@ -1,7 +1,7 @@
 package style.dx.java.service;
 
 import style.dx.java.dao.CommentDao;
-import style.dx.java.daoImpl.CommentDaoImplement;
+import style.dx.java.dao.daoImpl.CommentDaoImplement;
 import style.dx.java.model.Comment;
 
 import java.util.List;

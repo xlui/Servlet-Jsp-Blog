@@ -1,7 +1,7 @@
 package style.dx.java.service;
 
 import style.dx.java.dao.TagDao;
-import style.dx.java.daoImpl.TagDaoImplement;
+import style.dx.java.dao.daoImpl.TagDaoImplement;
 import style.dx.java.model.Article;
 import style.dx.java.model.Tag;
 import style.dx.java.util.ArticleUtils;

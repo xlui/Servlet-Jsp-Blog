@@ -1,4 +1,4 @@
-package style.dx.java.daoImpl;
+package style.dx.java.dao.daoImpl;
 
 import style.dx.java.dao.CommentDao;
 import style.dx.java.model.Comment;
