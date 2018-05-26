@@ -27,7 +27,7 @@ public interface ArticleDao extends CommonDao<Article, Integer> {
 
 	int count(Search search);
 
-	List getSorts();
+	List<String> getSorts();
 
 	boolean updateSort(String oldSort, String newSort);
 

@@ -13,11 +13,10 @@ public class ArticleUtils {
 	 * @param list 文章列表
 	 * @return 处理后的文章列表
 	 */
-	public static List<Article> cutTime(List<Article> list) {
+	public static void cutTime(List<Article> list) {
 		for (Article article : list) {
 			article.setTime(article.getTime().substring(0, 11));
 		}
-		return list;
 	}
 
 	/**

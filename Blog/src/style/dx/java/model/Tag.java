@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Tag implements Serializable {
 	private Integer id;
 	private String content;
-	private Integer article_id;
+	private Integer articleId;
 
 	@Override
 	public String toString() {
@@ -21,13 +21,13 @@ public class Tag implements Serializable {
 		this.content = content;
 	}
 
-	public Tag(Integer id, String content, Integer article_id) {
-		this.id = id;
-		this.content = content;
-		this.article_id = article_id;
-	}
+    public Tag(Integer id, String content, Integer articleId) {
+        this.id = id;
+        this.content = content;
+        this.articleId = articleId;
+    }
 
-	public Integer getId() {
+    public Integer getId() {
 		return id;
 	}
 
@@ -43,11 +43,11 @@ public class Tag implements Serializable {
 		this.content = content;
 	}
 
-	public Integer getArticle_id() {
-		return article_id;
-	}
+    public Integer getArticleId() {
+        return articleId;
+    }
 
-	public void setArticle_id(Integer article_id) {
-		this.article_id = article_id;
-	}
+    public void setArticleId(Integer articleId) {
+        this.articleId = articleId;
+    }
 }

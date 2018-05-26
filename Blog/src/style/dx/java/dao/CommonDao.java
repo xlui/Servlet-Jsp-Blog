@@ -5,6 +5,8 @@ import java.util.List;
 public interface CommonDao<T, K> {
 	List<T> findAll();
 
+	T findById(K k);
+
 	T insert(T t);
 
 	boolean delete(T t);

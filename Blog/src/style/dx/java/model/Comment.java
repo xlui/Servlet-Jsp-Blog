@@ -6,63 +6,69 @@ public class Comment implements Serializable {
 	private Integer id;
 	private String content;
 	private String time;
-	private Integer user
-	private int articleId;
+	private Integer userId;
+	private Integer articleId;
 
 	@Override
 	public String toString() {
-		return "Comment [id=" + id + ", articleId=" + articleId + ", nickName=" + nickName + ", content=" + content + ", time=" + time;
+		return "Comment [id=" + id + ", articleId=" + articleId + ", content=" + content + ", time=" + time;
 	}
 
 	public Comment() {
 		super();
 	}
 
-	public Comment(int id, int articleId, String nickName, String content, String time) {
-		this.id = id;
-		this.articleId = articleId;
-		this.nickName = nickName;
-		this.content = content;
-		this.time = time;
-	}
+    public Comment(Integer id, String content, String time) {
+        this.id = id;
+        this.content = content;
+        this.time = time;
+    }
 
-	public int getId() {
-		return id;
-	}
+    public Comment(Integer id, String content, String time, Integer userId, Integer articleId) {
+        this.id = id;
+        this.content = content;
+        this.time = time;
+        this.userId = userId;
+        this.articleId = articleId;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public int getArticleId() {
-		return articleId;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public void setArticleId(int articleId) {
-		this.articleId = articleId;
-	}
+    public String getContent() {
+        return content;
+    }
 
-	public String getNickName() {
-		return nickName;
-	}
+    public void setContent(String content) {
+        this.content = content;
+    }
 
-	public void setNickName(String nickName) {
-		this.nickName = nickName;
-	}
+    public String getTime() {
+        return time;
+    }
 
-	public String getContent() {
-		return content;
-	}
+    public void setTime(String time) {
+        this.time = time;
+    }
 
-	public void setContent(String content) {
-		this.content = content;
-	}
+    public Integer getUserId() {
+        return userId;
+    }
 
-	public String getTime() {
-		return time;
-	}
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
 
-	public void setTime(String time) {
-		this.time = time;
-	}
+    public Integer getArticleId() {
+        return articleId;
+    }
+
+    public void setArticleId(Integer articleId) {
+        this.articleId = articleId;
+    }
 }
